@@ -25,7 +25,7 @@ $ git clone https://github.com/spykelione/react-firebase-auth
 ```
 2. Change directory to ```react-firebase-auth```
 ```bash
-$ cd react-firebase-auth`
+$ cd react-firebase-auth
 ```
 3. Install dependencies:
 ```bash
