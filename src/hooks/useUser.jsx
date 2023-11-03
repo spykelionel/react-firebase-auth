@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { AuthContext } from '../contexts/AuthContext'
 
 
 function useUser() {
-  const {signup, login, user } = useContext(AuthContext)
+  const {signup, login, user, error } = useContext(AuthContext)
 
-  return {signup, login, user}
+  return {signup, login, user, error}
 
 }
 

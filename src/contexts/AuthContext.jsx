@@ -10,20 +10,19 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null)
 
   const signup = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const login = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password).then(authUser=>{
-      // localStorage.setItem('authUser', authUser)
-      // console.log(authUser)
-      // return authUser
-    })
-    .catch(err=>{
+  const login = async (email, password) => {
+    try {
+      const authUser = await signInWithEmailAndPassword(auth, email, password);
+    } catch (err) {
       console.log(err);
-    })
+      setError(err)
+    }
   };
 
   useEffect(() => {
@@ -36,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ signup, login, user }}>
+    <AuthContext.Provider value={{ signup, login, user, error }}>
       {children}
     </AuthContext.Provider>
   );

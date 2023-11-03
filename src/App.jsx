@@ -1,9 +1,10 @@
-import { BrowserRouter, Routes, Route, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import HomePage from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import './App.css'
 
 const router = createBrowserRouter([
   {
@@ -30,8 +31,7 @@ function RootRouter() {
 
 function App() {
   return (
-    <div id='root'>
-
+    <div className='root'>
       <AuthProvider>
         <RootRouter />
       </AuthProvider>
