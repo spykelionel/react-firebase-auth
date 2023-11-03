@@ -6,7 +6,7 @@ import Layout from './Layout';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setIsLoading] = useState(null)
+  const [loading, setIsLoading] = useState(false)
   const { login, error } = useUser()
   const navigate = useNavigate();
 
