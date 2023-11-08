@@ -23,3 +23,4 @@ describe("Home page", () => {
     expect(window.location.pathname).toBe('/dashboard'); 
   })
 });
+ 
